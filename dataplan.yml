@@ -1,0 +1,60 @@
+definitions:
+  varchar: &vc
+    type: varchar
+    notNull: true
+
+  varcharNullable: &vcnull
+    <<: *vc
+    notNull: false
+  
+  int: &int
+    type: integer
+    notNull: true
+
+  float: &float
+    type: float
+    default: null
+
+  review_category: &review_category
+    type: NUMERIC(4,2)
+    notNull: true
+
+  date: &date
+    type: date
+    default: null
+
+  fk: &fk
+    type: SERIAL
+    fk: true
+
+  pk: &pk
+    type: SERIAL
+    pk: true
+
+tables:
+  jobs:
+    id: *pk
+    company:
+      <<: *vc
+      origin: Company & Position
+    job: 
+      <<: *vcnull
+      origin: Company & Position
+    post_date: 
+      <<: *date
+      origin: Date posted
+    location: 
+      <<: *vcnull
+      origin: Location
+    salary: 
+      <<: *vcnull
+      origin: Salary
+    labels: 
+      <<: *vcnull
+      origin: Labels
+    company_url: 
+      <<: *vcnull
+      origin: Company url
+    link: 
+      <<: *vcnull
+      origin: link

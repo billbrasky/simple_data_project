@@ -1,0 +1,5 @@
+*password*
+raw.csv
+log/
+env/
+__pycache__
